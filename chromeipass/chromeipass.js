@@ -1539,22 +1539,15 @@ cip.fillIn = function(combination, onlyPassword, suppressWarnings) {
 					pField.data("unchanged", true);
 				}
 
-                var list = {};
+				var list = {};
 				if(cip.fillInStringFields(combination.fields, valStringFields, list)) {
-                    cipForm.destroy(false, {"password": list.list[0], "username": list.list[1]});
-                }
+					cipForm.destroy(false, {"password": list.list[0], "username": list.list[1]});
+				}
 			}
 
-			// user has to select correct credentials by himself
 			if(countPasswords > 1) {
-				if(!suppressWarnings) {
-					var message = "Error #105\nMore than one login was found in KeePass!\n" +
-					"Press the chromeIPass icon for more options.";
-					chrome.extension.sendMessage({
-						action: 'alert',
-						args: [message]
-					});
-				}
+				// Focus the username field to let the user pick from the autocompletion list.
+				uField.focus();
 			}
 			else if(countPasswords < 1) {
 				if(!suppressWarnings) {
