@@ -45,14 +45,14 @@
 		"fill-username-password": {
 			"description": "Insert username + password",
 			"suggested_key": {
-				"default": "Ctrl+Shift+U",
+				"default": "Alt+A",
 				"mac": "Command+Shift+U"
 			}
 		},
 		"fill-password": {
 			"description": "Insert a password",
 			"suggested_key": {
-				"default": "Ctrl+Shift+P",
+				"default": "Alt+P",
 				"mac": "Command+Shift+P"
 			}
 		}
